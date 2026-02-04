@@ -282,7 +282,7 @@ button {
     align-items: center;
     z-index: 1000;
     padding: 30px;
-    overflow-y: auto;
+    overflow-y: hidden;
 }
 
 /* PHOTOS MODAL - PERFECT MATCH */
@@ -308,6 +308,9 @@ button {
     backdrop-filter: blur(20px);
     text-align: center;
     animation: modalPop 0.6s ease;
+    max-height: 90vh;
+    overflow-y: auto;
+    -webkit-overflow-scrolling: touch;
 }
 
 .modal-title {
@@ -710,6 +713,15 @@ Guddda ❤️
 </div>
 
 <script>
+
+function lockBody() {
+    document.body.style.overflow = "hidden";
+}
+
+function unlockBody() {
+    document.body.style.overflow = "";
+}
+
 const herName = "Laallluuuu";
 const yesBtn = document.getElementById("yesBtn");
 const noBtn = document.getElementById("noBtn");
@@ -799,6 +811,7 @@ const quizzes = [
 ];
 
 function openQuiz() { 
+    lockBody();
     document.getElementById("quizModal").style.display = "flex"; 
     currentQuiz = 1; 
     updateQuiz(); 
@@ -820,22 +833,23 @@ function updateQuiz() {
 }
 
 function nextQuiz() { currentQuiz++; updateQuiz(); }
-function closeQuiz() { document.getElementById("quizModal").style.display = "none"; currentQuiz = 1; }
+function closeQuiz() { document.getElementById("quizModal").style.display = "none";  unlockBody(); currentQuiz = 1; }
 
-function openLetter() { document.getElementById("letterModal").style.display = "flex"; }
-function closeLetter() { document.getElementById("letterModal").style.display = "none"; }
+function openLetter() {lockBody(); document.getElementById("letterModal").style.display = "flex"; }
+function closeLetter() { document.getElementById("letterModal").style.display = "none"; unlockBody();}
 
-function openPhotos() { document.getElementById("photosModal").style.display = "flex"; }
-function closePhotos() { document.getElementById("photosModal").style.display = "none"; }
+function openPhotos() {lockBody(); document.getElementById("photosModal").style.display = "flex"; }
+function closePhotos() { document.getElementById("photosModal").style.display = "none"; unlockBody();}
 
 /* DINNER POPUP */
 function showDinnerPopup() {
+    lockBody();
     document.getElementById("dinnerPopup").style.display = "flex";
     setTimeout(startDinnerHearts, 300);
 }
 
 function closeDinnerPopup() {
-    document.getElementById("dinnerPopup").style.display = "none";
+    document.getElementById("dinnerPopup").style.display = "none";unlockBody();
 }
 
 function startDinnerHearts() {
@@ -855,6 +869,7 @@ function startDinnerHearts() {
 
 </body>
 </html>
+
 
 
 
