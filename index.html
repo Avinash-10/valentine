@@ -526,6 +526,33 @@ button {
 @keyframes fall {
     to { transform: translateY(120vh) rotate(360deg); opacity: 0; }
 }
+/* ===============================
+   iPHONE / SMALL SCREEN FIX
+   =============================== */
+@media (max-width: 480px) {
+
+    .photos-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 16px;
+        padding: 10px;
+    }
+
+    .photo-item img {
+        height: 120px;
+        min-height: 120px;
+    }
+
+    .modal-content {
+        padding: 20px 16px;
+        max-height: 88vh;
+    }
+
+    body {
+        overflow-x: hidden;
+    }
+}
+
+
 </style>
 </head>
 
@@ -803,3 +830,4 @@ function startDinnerHearts() {
 
 </body>
 </html>
+
