@@ -552,6 +552,14 @@ button {
     }
 }
 
+/* iOS SAFE AREA FIX FOR BACK BUTTON */
+@media (max-width: 480px) {
+    .back-btn {
+        margin-bottom: calc(20px + env(safe-area-inset-bottom));
+    }
+}
+
+
 
 </style>
 </head>
@@ -830,4 +838,5 @@ function startDinnerHearts() {
 
 </body>
 </html>
+
 
