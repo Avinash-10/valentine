@@ -559,6 +559,23 @@ button {
     }
 }
 
+/* FIX LETTER MODAL HEIGHT ON iOS */
+@media (max-width: 480px) {
+
+    .letter-modal {
+        align-items: flex-start;
+        padding-top: calc(20px + env(safe-area-inset-top));
+        padding-bottom: calc(20px + env(safe-area-inset-bottom));
+    }
+
+    .letter-modal .modal-content {
+        max-height: none;
+        min-height: calc(100vh - env(safe-area-inset-top) - env(safe-area-inset-bottom) - 40px);
+        margin-bottom: env(safe-area-inset-bottom);
+    }
+}
+
+
 
 
 </style>
@@ -838,5 +855,6 @@ function startDinnerHearts() {
 
 </body>
 </html>
+
 
 
