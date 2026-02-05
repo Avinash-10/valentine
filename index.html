@@ -578,6 +578,23 @@ button {
     }
 }
 
+/* FIX LETTER TEXT SCROLL ON iOS */
+.letter-text {
+    font-size: 19px;
+    line-height: 1.7;
+    color: #444;
+    margin: 30px 0;
+    white-space: pre-line;
+    font-style: italic;
+    padding: 30px;
+    background: rgba(255,255,255,0.5);
+    border-radius: 20px;
+    border-left: 5px solid #ff6b9d;
+
+    max-height: 60vh;
+    overflow-y: auto;
+    -webkit-overflow-scrolling: touch;
+}
 
 
 
@@ -642,7 +659,7 @@ button {
 <div class="letter-modal" id="letterModal">
     <div class="modal-content" style="background: #fce4ec; border: none; box-shadow: 0 20px 60px rgba(255,77,109,0.4); padding: 40px 30px;">
         <h3 class="modal-title" style="font-size: 28px;">A Letter For You 🥰</h3>
-        <div style="font-size: 19px; line-height: 1.7; color: #444; margin: 30px 0; white-space: pre-line; font-style: italic; padding: 30px; background: rgba(255,255,255,0.5); border-radius: 20px; border-left: 5px solid #ff6b9d;">
+        <div class="letter-text">
 My Laallluuuu,
 
 Thank you for being my Valentine! 
@@ -704,7 +721,7 @@ Guddda ❤️
         </div>
         <div class="dinner-date">
             📅 <strong>14th February 8:00 PM</strong><br>
-            Wear something pretty for me 😘
+            Let's make our first Valentine special 😘
         </div>
         <button class="close-dinner" onclick="closeDinnerPopup()">
             Can't Wait! ❤️
@@ -805,7 +822,7 @@ let currentQuiz = 1;
 const quizzes = [
     {q: "Who said 'I Love You' first?", a1: "You did first! 💖", a2: "I did first 😏"},
     {q: "Who starts fight first?", a1: "Me 🙈", a2: "Obviously Me 🍿"},
-    { q: "Who misses more?", a1: "Me always 💕", a2: "You secretly 😌" },
+    {q: "Who misses more?", a1: "Me always 💕", a2: "You secretly 😌" },
     {q: "Who checks phone first after a fight?", a1: "Me 🙈", a2: "You 👀" },
     {q: "Who is more stubborn?", a1: "You 😏", a2: "Me 😤" }
 ];
@@ -869,6 +886,7 @@ function startDinnerHearts() {
 
 </body>
 </html>
+
 
 
 
